@@ -70,7 +70,7 @@ void SysTick_SWDelayMs(uint32_t x_ms)
     end = _SysTick_ms + x_ms;
     
     /* wait */
-    while((end - _SysTick_ms) < MINUS_COMPARE_STD)
+    while ((end - _SysTick_ms) < _ZD_STD_MINUS_COMPARE)
     {
     }
 }

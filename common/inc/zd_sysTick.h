@@ -12,7 +12,7 @@
 #ifndef __ZD_SYSTICK_H__
 #define __ZD_SYSTICK_H__
 
-#ifdefine __cplusplus
+#ifdef __cplusplus
 extern "C"{
 #endif /* __cplusplus */
 
@@ -43,7 +43,7 @@ extern "C"{
  
  
 
-#ifdefine __cplusplus
+#ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
