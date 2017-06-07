@@ -13,8 +13,8 @@
 /*******************************************************************************
  * Includes.
  */
-#include "zd_sysTick.h"
-#include "zd_assert.h"
+#include "common/inc/zd_sysTick.h"
+#include "common/inc/zd_assert.h"
 
 
 /*******************************************************************************

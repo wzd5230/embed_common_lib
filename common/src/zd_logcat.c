@@ -12,7 +12,7 @@
 /*******************************************************************************
  * Includes.
  */
-#include "zd_logcat.h"
+#include "common/inc/zd_logcat.h"
 
 
 #if 0

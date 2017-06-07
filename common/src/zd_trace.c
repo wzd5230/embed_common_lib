@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "zd_trace.h"
+#include "common/inc/zd_trace.h"
 
 #if ZD_TRACE_ENABLE
 
