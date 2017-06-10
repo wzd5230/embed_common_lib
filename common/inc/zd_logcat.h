@@ -31,11 +31,18 @@ extern "C"{
 
 
 #if ZD_LOGCAT_ENABLE
+  
+  
 /* output stream,modify if needed. */
 #define ZD_LOGCAT_PRINTF(...)           printf(__VA_ARGS__)                     /*  */
+
+  
+  
 #define ZD_LOGCAT(LEVEL,...)            do{\
-    (LEVEL <= ZD_LOGCAT_LEVEL) ? ZD_LOGCAT_PRINTF(__VA_ARGS__) : (void)0; \
-}while (0);                             /* log with level-control. */
+                                            if(LEVEL <5)\
+                                            {ZD_LOGCAT_PRINTF(__VA_ARGS__);}\
+                                          }while (0)                            /* log with level-control. */
+  
 #else
 #define ZD_LOGCAT_PRINTF(...)
 #define ZD_LOGCAT(LEVEL,EXP,...)
@@ -70,6 +77,7 @@ typedef enum _ZD_LOGCAT_LEVEL_T
 /*******************************************************************************
  * Method extern.
  */
+int8_t zd_logcatInit(void);
 
 
 /*******************************************************************************

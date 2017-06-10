@@ -25,7 +25,7 @@ extern "C"{
 /*******************************************************************************
  * Macro.
  */
-
+#define Delay_ms(x_ms)                  do{SysTick_SWDelayMs(x_ms);}while(0)    /*  */
  
 /*******************************************************************************
  * Type def.
@@ -35,6 +35,11 @@ extern "C"{
 /*******************************************************************************
  * Method extern.
  */
+int8_t zd_SysTick_Init(void);
+void zd_SysTick_upgradeCallback(void);
+uint32_t zd_SysTick_get(void);
+void zd_SysTick_SWDelayMs(uint32_t x_ms);
+
  
  
 /*******************************************************************************

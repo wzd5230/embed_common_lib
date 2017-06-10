@@ -37,10 +37,10 @@ void zd_assert_failed(uint8_t* file, uint32_t line)
 void zd_assert_failed(uint8_t* file, uint32_t line, char* expression)
 {
 
-    printf("\n\rVCOM DEBUG: Incorrect parameter. Please reboot.\n\r");
-    printf("%s:%d \n\r", file, line);
-    printf("The expression \"%s\" returned FALSE.\n\r", expression);
-
+    ZD_LOGCAT(ZD_LOGCAT_LEVEL_0, "\n\rVCOM DEBUG: Incorrect parameter. Please reboot.\n\r");
+    ZD_LOGCAT(ZD_LOGCAT_LEVEL_HIGHEST, "%s:%d \n\r", file, line);
+    ZD_LOGCAT(ZD_LOGCAT_LEVEL_HIGHEST, "The expression \"%s\" returned FALSE.\n\r", expression);
+    
     /* Infinite loop */
     while (1)
     {

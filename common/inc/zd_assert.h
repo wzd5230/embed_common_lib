@@ -10,6 +10,7 @@ extern "C" {
  * Includes
  */
 #include <stdint.h>
+#include "zd_logcat.h"
 
 /*******************************************************************************
  * Macro

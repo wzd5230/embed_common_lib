@@ -14,18 +14,39 @@
  */
 #include "common/inc/zd_logcat.h"
 
+#include "DEBUG.H"
 
-#if 0
+
+/**
+  * @fun    zd_logcatInit
+  * @param  ...
+  * @retval ...
+  * @brief  Init logcat hardware interface.
+  */
+int8_t zd_logcatInit(void)
+{
+  int8_t result = 0;
+
+  Debug_Init( 115200 );
+
+  return result;
+}
+
+
+
 /**
   * @fun    fputc
   * @param  ...
   * @retval ...
   * @brief  Redefine the output stream method.
   */
-int fputc(int _Ch, FILE *file)
-{
-    /* TODO: 根据需要写输出流*/
+#if 1
+int fputc(int ch, FILE *file)
+{    
+    USART_SendData(DBUG_COMX, (uint8_t) ch);
     
-    return _Ch;
+    while (USART_GetFlagStatus(DBUG_COMX, USART_FLAG_TC) == RESET);
+    
+    return ch;
 }
 #endif /* 1/0 */
